@@ -1,0 +1,35 @@
+<nav class="navbar fixed-top navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand text-dark" href="{% url 'artikel:index' %}">GUDANG</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-dark" href="{% url 'artikel:index' %}">Home<span class="sr-only">(current)</span></a>
+        </li>
+         <li class="nav-item dropdown ml-45">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Artikel
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'artikel:list' %}">List Artikel</a>
+            <a class="dropdown-item" href="{% url 'artikel:category' %}">Kategori Artikel</a>
+          </div>
+        </li> 
+      </ul>
+      <div class="nav-item dropdown ml-45">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            USER
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'artikel:create' %}">Buat Artikel</a>
+            <a class="dropdown-item" href="{% url 'artikel:manage' %}">Manage</a>
+            
+          </div>
+      </div>
+    </div>
+  </div>
+</nav>

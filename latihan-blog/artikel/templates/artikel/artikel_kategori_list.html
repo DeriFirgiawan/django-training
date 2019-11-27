@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Kategori Artikel
+{% endblock title %}
+
+{% block contents %}
+	<h2>Kategori Artikel</h2>
+	<br>
+	<h2><a href="{% url 'artikel:list' %}">Semua Artikel</a></h2>
+	<hr>
+	{% for kategori in kategori_list %}
+		<h3><a href="{% url 'artikel:listkategori' kategori %}">{{kategori}}</a></h3>
+		<hr>
+	{% endfor %}
+{% endblock contents %}

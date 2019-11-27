@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+	List Artikel
+{% endblock title %}
+
+{% block contents %}
+	<h1>List Artikel</h1>
+	<hr>
+	{% for artikel in artikel_list %}
+		<h3>{{artikel.judul}}</h3>
+		<h6>Kategori: {{artikel.kategori}} | {{artikel.published|date}}</h6>
+		<p>{{artikel.isi|truncatewords:50}} <a href="{% url 'artikel:detail' artikel.slug %}">Selengkapnya</a></p>
+	{% endfor %}
+{% endblock contents %}
