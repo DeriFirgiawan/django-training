@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block contents %}
+	<div class="jumbotron">
+		<h3>Lengkapi Semua Data Yang di Butuhkan</h3>
+		<form method="POST">
+			{% csrf_token %}
+		   	<div class="form-group">
+			    <label for="{{form.nama_lengkap.id_for_label}}">{{form.nama_lengkap.label}}</label>
+			    <input type="text" class="form-control" name="{{form.nama_lengkap.name}}" maxlength="{{form.nama_lengkap.max}}" required id="{{form.nama_lengkap.id_for_label}}">
+			</div>
+
+			<div class="form-group">
+				<label for="{{form.tempat_tanggal_lahir.id_for_label}}">{{form.tempat_tanggal_lahir.label}}</label>
+				<input class="form-control" name="{{form.tempat_tanggal_lahir.name}}" required id="{{form.tempat_tanggal_lahir.id_for_label}}">
+			</div>
+
+			<div class="form-group">
+				<label for="{{form.jenis_kelamin.id_for_label}}">Jenis Kelamin</label>
+				{{form.jenis_kelamin}}
+			</div>
+
+			<div class="form-group">
+				<label for="{{form.alamat.id_for_label}}">{{form.alamat.label}}</label>
+				<textarea class="form-control" name="{{form.alamat.name}}" required id="{{form.alamat.id_for_label}}"></textarea>
+			</div>
+
+			<div class="form-group">
+			    <label for="{{form.kelurahan.id_for_label}}">{{form.kelurahan.label}}</label>
+			    <input type="text" class="form-control" name="{{form.kelurahan.name}}" maxlength="{{form.kelurahan.max}}" required id="{{form.kelurahan.id_for_label}}">
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-6">
+					<label for="{{form.no_hp.id_for_label}}">{{form.no_hp.label}}</label>
+			    	<input type="text" class="form-control" name="{{form.no_hp.name}}" maxlength="{{form.no_hp.max}}" required id="{{form.no_hp.id_for_label}}">
+				</div>
+			    <div class="col-md-6">
+				    <label for="{{form.instagram.id_for_label}}">{{form.instagram.label}}</label>
+				    <input type="text" class="form-control" name="{{form.instagram.name}}" maxlength="{{form.instagram.max}}" required id="{{form.instagram.id_for_label}}">
+				</div>
+			</div>
+
+			
+
+			<div class="form-group row">
+				<div class="col-md-6">
+					<label for="{{form.asal_sekolah.id_for_label}}">{{form.asal_sekolah.label}}</label>
+					<input type="text" class="form-control" name="{{form.asal_sekolah.name}}" maxlength="{{form.asal_sekolah.max}}" required id="{{form.asal_sekolah.id_for_label}}">
+				</div>
+				<div class="col-md-6">
+					<label for="{{form.kelas.id_for_label}}">{{form.kelas.label}}</label>
+					<input type="text" class="form-control" name="{{form.kelas.name}}" maxlength="{{form.kelas.max}}" required id="{{form.kelas.id_for_label}}">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-6">
+					<label for="{{form.nama_orang_tua.id_for_label}}">{{form.nama_orang_tua.label}}</label>
+					<input class="form-control" name="{{form.nama_orang_tua.name}}" required id="{{form.nama_orang_tua.id_for_label}}">
+				</div>
+				<div class="col-md-6">
+					<label for="{{form.no_hp_orang_tua.id_for_label}}">{{form.no_hp_orang_tua.label}}</label>
+					<input class="form-control" name="{{form.no_hp_orang_tua.name}}" required id="{{form.no_hp_orang_tua.id_for_label}}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="{{form.perguruan_tinggi.id_for_label}}">{{form.perguruan_tinggi.label}}</label>
+				<textarea class="form-control" name="{{form.perguruan_tinggi.name}}" required id="{{form.perguruan_tinggi.id_for_label}}"></textarea>
+			</div>
+
+			<button class="btn btn-success btn-block" type="submit">Kirim</button>
+		</form>
+	</div>
+{% endblock contents %}
